@@ -1,0 +1,18 @@
+alias cv="cd ~/workspace/workspace-projects/conciliadorvirtual/; ls"
+alias cvdoc="cd ~/Work/Projetos/ConciliadorVirtual/; ls"
+alias fatfight="cd ~/workspace/workspace-projects/fatfight/; ls"
+alias training="cd ~/workspace/training/; ls"
+alias angular="cd ~/workspace/training/angularjs; ls"
+alias devel="cd ~/workspace/; ls"
+alias liferay="cd ~/workspace/liferay/liferay_support/; ls"
+alias projects="cd ~/workspace/workspace-projects/; ls"
+alias mds="cd ~/Work/MDS/; ls"
+alias landings="cd ~/workspace/workspace-projects/landings; ls"
+
+alias java7="export JAVA_HOME=$(/usr/libexec/java_home -v 1.7) && java -version"
+alias java8="export  JAVA_HOME=$(/usr/libexec/java_home -v 1.8) && java -version"
+
+alias chuva?="curl -4 http://wttr.in/Brasilia"
+alias gcc-arm="/usr/local/linaro/arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf-gcc"
+alias avixy="cd /Users/edsonma/workspace/workspace-avixy/avixy-devel_vm"
+alias laele="cd /Users/edsonma/workspace/workspace-projects/laele"
