@@ -109,6 +109,12 @@ Plugin 'ntpeters/vim-better-whitespace'
 " autoclose
 Plugin 'townk/vim-autoclose'
 
+" vim-jsx-pretty
+Plugin 'maxmellon/vim-jsx-pretty'
+
+" vim-jsx
+Plugin 'mxw/vim-jsx'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -137,7 +143,13 @@ set softtabstop=2
 set hlsearch
 set ic
 
-let NERDTreeIgnore = ['node_modules']
+" fixing backspace in insert mode
+set backspace=indent,eol,start
 
+let NERDTreeIgnore = ['node_modules']
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+let g:syntastic_javascript_checkers = ['eslint']
+
+syntax on
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swp//
