@@ -1,6 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
+highlight BadWhitespace ctermbg=red guibg=red 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -114,6 +114,51 @@ Plugin 'maxmellon/vim-jsx-pretty'
 
 " vim-jsx
 Plugin 'mxw/vim-jsx'
+
+" typescript-vim
+Plugin 'leafgarland/typescript-vim'
+
+" docker
+Plugin 'ekalinin/Dockerfile.vim'
+
+" syntax check
+Plugin 'vim-syntastic/syntastic'
+
+" pep8 checking
+Plugin 'nvie/vim-flake8'
+
+"Tidal Cycles
+Plugin 'munshkr/vim-tidal'
+
+"Free Marker
+Plugin 'andreshazard/vim-freemarker'
+
+" Python
+Plugin 'vim-scripts/indentpython.vim'
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+au BufNewFile,BufRead *.py
+    \ set tabstop=3 |
+    \ set softtabstop=3 |
+    \ set shiftwidth=3 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
+
+  let python_highlight_all=1
+  syntax on
+
+" Python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
+
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
