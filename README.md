@@ -2,7 +2,7 @@
 - [My Personal Dotfiles](#my-personal-dotfiles)
 - [Quickstart](#quickstart)
 - [What does it do](#what-does-it-do)
-- [References] (#references)
+- [References](#references)
 
 ## My Personal Dotfiles
 My dotfiles are in this repo. You should clone into your home dir and the path will be ~/dotfiles. There's a script `dotfiles_install.sh` that creates symlinks from dotfiles directory and installs some tools for you.
@@ -52,4 +52,3 @@ ln -s ~/git/gitconfig ~/.gitconfig
 - Will add more someday... :)
 
 This dotfiles setup is primary based on [Michael Smalley's dotfiles setup](https://github.com/michaeljsmalley/dotfiles), which he described at his [blog](http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/). but I also get contributions from https://github.com/soto97/dotfiles
-
