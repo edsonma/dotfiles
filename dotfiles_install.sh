@@ -1,16 +1,16 @@
 #!/bin/bash
-############################
-# .make.sh
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
-############################
 
-########## Variables
+# Author: Edson Ma
+# This script installs tools and creates symlinks from all dotfiles in ~/dotfiles
 
+#References
+https://dotfiles.github.io/
+
+# Variables
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc vim zshrc oh-my-zsh private scrotwm.conf Xresources"    # list of files/folders to symlink in homedir
-
-##########
+files="git/gitconfig system/alias system/zshrc system/oh-my-zsh vim vim/vimrc"    # list of files/folders to symlink in homedir
+platform=$(uname);                # get your OS platform
 
 # create dotfiles_old in homedir
 echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."
@@ -22,7 +22,8 @@ echo -n "Changing to the $dir directory ..."
 cd $dir
 echo "done"
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
+# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir
+# to any files in the ~/dotfiles directory specified in $files
 for file in $files; do
     echo "Moving any existing dotfiles from ~ to $olddir"
     mv ~/.$file ~/dotfiles_old/
@@ -31,7 +32,7 @@ for file in $files; do
 done
 
 install_zsh () {
-# Test to see if zshell is installed.  If it is:
+# Test to see if zshell is installed.
 if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     # Clone my oh-my-zsh repository from GitHub only if it isn't already present
     if [[ ! -d $dir/oh-my-zsh/ ]]; then
@@ -43,7 +44,6 @@ if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     fi
 else
     # If zsh isn't installed, get the platform of the current machine
-    platform=$(uname);
     # If the platform is Linux, try an apt-get to install zsh and then recurse
     if [[ $platform == 'Linux' ]]; then
         if [[ -f /etc/redhat-release ]]; then
@@ -73,7 +73,6 @@ fi
 }
 
 install_asdf() {
-  platform=$(uname);
   if [ -f ~/.asdf/asdf.sh ]; then
     echo "asdf already available. Good job!"
   else
@@ -93,10 +92,25 @@ install_asdf() {
 }
 
 install_brew() {
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    #If the platform is Linux
+    if [[ $platform == 'Linux' ]]; then
+      git clone https://github.com/Linuxbrew/brew.git ~/.linuxbrew
+      echo 'PATH="$HOME/.linuxbrew/bin:$PATH"' >> ~/.zshrc
+      echo 'export MANPATH="$(brew --prefix)/share/man:$MANPATH"' >> ~/.zshrc
+      echo 'export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"' >> ~/.zshrc
+
+    # If the platform is OS X
+    elif [[ $platform == 'Darwin' ]]; then
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        brew update
+        brew tap caskroom/cask
+        brew tap caskroom/versions
+        exit
+    fi
 }
 
 install_zsh
 install_vundle
 install_asdf
+install_brew
 
