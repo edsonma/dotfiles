@@ -10,6 +10,7 @@ ln -s ~/dotfiles/system/alias ~/.alias
 ln -s ~/dotfiles/system/zshrc ~/.zshrc
 ln -s ~/dotfiles/system/oh-my-zsh ~/.oh-my-zsh
 ln -s ~/git/gitconfig ~/.gitconfig
+ln -s ~/git/adsf ~/.asdf
 
 
 

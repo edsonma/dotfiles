@@ -3,18 +3,16 @@
 # Author: Edson Ma
 # This script installs tools and creates symlinks from all dotfiles in ~/dotfiles
 
-#References
-https://dotfiles.github.io/
-
 # Variables
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="git/gitconfig system/alias system/zshrc system/oh-my-zsh vim vim/vimrc"    # list of files/folders to symlink in homedir
+files="gitconfig alias zshrc oh-my-zsh vim vimrc asdf linuxbrew"    # list of files/folders to symlink in homedir
+datedir=`date +%Y-%m-%d`
 platform=$(uname);                # get your OS platform
 
 # create dotfiles_old in homedir
-echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."
-mkdir -p $olddir
+echo -n "Creating $olddir/$datedir for backup of any existing dotfiles in ~ ..."
+mkdir -p $olddir/$datedir
 echo "done"
 
 # change to the dotfiles directory
@@ -22,25 +20,38 @@ echo -n "Changing to the $dir directory ..."
 cd $dir
 echo "done"
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir
-# to any files in the ~/dotfiles directory specified in $files
+# move any existing dotfiles in homedir to dotfiles_old directory
+echo "Moving any existing dotfiles from ~ to $olddir/$datedir ..."
 for file in $files; do
-    echo "Moving any existing dotfiles from ~ to $olddir"
-    mv ~/.$file ~/dotfiles_old/
-    echo "Creating symlink to $file in home directory."
-    ln -s $dir/$file ~/.$file
+    mv ~/.$file ~/dotfiles_old/$datedir
 done
 
-install_zsh () {
+# Create symlinks from the homedir to any files in the ~/dotfiles directory
+create_symbolic_links() {
+  ln -s ~/dotfiles/vim/vimrc ~/.vimrc
+  ln -s ~/dotfiles/vim ~/.vim
+  ln -s ~/dotfiles/system/alias ~/.alias
+  ln -s ~/dotfiles/system/zshrc ~/.zshrc
+  ln -s ~/dotfiles/system/oh-my-zsh ~/.oh-my-zsh
+  ln -s ~/dotfiles/tools/asdf ~/.asdf
+  ln -s ~/dotfiles/git/gitconfig ~/.gitconfig
+
+  if [[ $platform == 'Linux' ]]; then
+    ln -s ~/ddotfiles/system/linuxbrew ~/.linuxbrew
+  fi
+}
+
+install_zsh() {
 # Test to see if zshell is installed.
 if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     # Clone my oh-my-zsh repository from GitHub only if it isn't already present
-    if [[ ! -d $dir/oh-my-zsh/ ]]; then
+    echo "Oh my zsh already available. Good Job!"
+    if [[ ! -d $dir/system/oh-my-zsh/ ]]; then
         git clone http://github.com/robbyrussell/oh-my-zsh.git
     fi
     # Set the default shell to zsh if it isn't currently set to zsh
     if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
-        chsh -s $(which zsh)
+        chsh -s /bin/zsh
     fi
 else
     # If zsh isn't installed, get the platform of the current machine
@@ -65,11 +76,11 @@ fi
 }
 
 install_vundle () {
-if [ -f ~/.vim/bundle/Vundle.vim ]; then
-  echo "Vundle already installed. Please enter vim and type :PluginInstall"
-else
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
+  if [ -d ~/.vim/bundle/Vundle.vim ]; then
+    echo "Vundle already installed. Please enter vim and type :PluginInstall"
+  else
+    git clone https://github.com/VundleVim/Vundle.vim.git $dir/vim/bundle/Vundle.vim
+  fi
 }
 
 install_asdf() {
@@ -87,25 +98,32 @@ install_asdf() {
       brew install coreutils automake autoconf openssl libyaml readline libxslt libtool unixodbc
     fi
 
-    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.1
+    git clone https://github.com/asdf-vm/asdf.git $dir/tools/asdf --branch v0.5.0
   fi
 }
 
 install_brew() {
-    #If the platform is Linux
+    # if the platform is Linux
     if [[ $platform == 'Linux' ]]; then
-      git clone https://github.com/Linuxbrew/brew.git ~/.linuxbrew
-      echo 'PATH="$HOME/.linuxbrew/bin:$PATH"' >> ~/.zshrc
-      echo 'export MANPATH="$(brew --prefix)/share/man:$MANPATH"' >> ~/.zshrc
-      echo 'export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"' >> ~/.zshrc
-
+      if [ -f ~/.linuxbrew ]; then
+        echo "Linuxbrew already available. Good Bier!"
+      else
+        git clone https://github.com/Linuxbrew/brew.git $dir/system/linuxbrew
+        echo 'PATH="$HOME/.linuxbrew/bin:$PATH"' >> ~/.zshrc
+        echo 'export MANPATH="$(brew --prefix)/share/man:$MANPATH"' >> ~/.zshrc
+        echo 'export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"' >> ~/.zshrc
+      fi
     # If the platform is OS X
     elif [[ $platform == 'Darwin' ]]; then
+      if [ -f /usr/local/Homebrew/bin/brew ]; then
+        echo "Homebrew already available. Good Bier!"
+      else
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
         brew update
         brew tap caskroom/cask
         brew tap caskroom/versions
         exit
+      fi
     fi
 }
 
@@ -114,3 +132,4 @@ install_vundle
 install_asdf
 install_brew
 
+create_symbolic_links
