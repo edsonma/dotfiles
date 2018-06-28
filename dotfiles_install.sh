@@ -37,7 +37,7 @@ create_symbolic_links() {
   ln -s ~/dotfiles/git/gitconfig ~/.gitconfig
 
   if [[ $platform == 'Linux' ]]; then
-    ln -s ~/ddotfiles/system/linuxbrew ~/.linuxbrew
+    ln -s ~/dotfiles/system/linuxbrew ~/.linuxbrew
   fi
 }
 

@@ -41,7 +41,12 @@ ln -s ~/dotfiles/vim ~/.vim
 ln -s ~/dotfiles/system/alias ~/.alias
 ln -s ~/dotfiles/system/zshrc ~/.zshrc
 ln -s ~/dotfiles/system/oh-my-zsh ~/.oh-my-zsh
-ln -s ~/git/gitconfig ~/.gitconfig
+ln -s ~/dotfiles/tools/asdf ~/.asdf
+ln -s ~/dotfiles/git/gitconfig ~/.gitconfig
+
+if [[ $platform == 'Linux' ]]; then
+  ln -s ~/dotfiles/system/linuxbrew ~/.linuxbrew
+fi 
 ```
 ### Tools that I use
 - Vim + Vundle
