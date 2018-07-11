@@ -23,3 +23,5 @@ alias unb="cd /Users/edsonma/workspace/workspace-unb"
 alias vqf="cd /Users/edsonma/workspace/music/vqf"
 alias lilyponding="cd /Users/edsonma/workspace/workspace-unb/talks/lilypond_music_talks; ls"
 alias ariel="cd /Users/edsonma/workspace/workspace-projects/little-mermaid/ariel; ls"
+alias sebastian="cd /Users/edsonma/workspace/workspace-projects/little-mermaid/sebastian; ls"
+
