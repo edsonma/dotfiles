@@ -25,3 +25,4 @@ alias lilyponding="cd /Users/edsonma/workspace/workspace-unb/talks/lilypond_musi
 alias ariel="cd /Users/edsonma/workspace/workspace-projects/little-mermaid/ariel; ls"
 alias sebastian="cd /Users/edsonma/workspace/workspace-projects/little-mermaid/sebastian; ls"
 alias mobee="cd /Users/edsonma/workspace/workspace-projects/mapeiadf; ls"
+alias txt="cd /Users/edsonma/txt; ls"
