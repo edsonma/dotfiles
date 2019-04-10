@@ -68,7 +68,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
 
 " vim-airline-themes
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'iceberg.vim'
 
 " tagbar
 Plugin 'majutsushi/tagbar'
