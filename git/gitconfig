@@ -1,6 +1,6 @@
 [user]
-	name = Edson Lek Hong Ma
-	email = edson.ma@seatecnologia.com.br
+	name = Edson Ma
+	email = edsonma@gmail.com
 [core]
 	excludesfile = /Users/edsonma/.gitignore_global
 	editor = /usr/bin/vim
