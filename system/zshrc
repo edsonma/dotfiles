@@ -1,11 +1,11 @@
 # Virtual Environments in a centralized location
-export WORKON_HOME=~/workspace/envs
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3.7
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+#export WORKON_HOME=~/workspace/envs
+#export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3.7
+#export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/usr/local/anaconda3/bin:$PATH
+#export PATH=/usr/local/anaconda3/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/edsonma/.oh-my-zsh
@@ -99,7 +99,7 @@ export LANG=en_US.UTF-8
 source ~/.alias
 
 export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+#eval "$(jenv init -)"
 
 # asdf 
 #. $HOME/.asdf/asdf.sh
@@ -120,13 +120,13 @@ eval "$(jenv init -)"
 #if [ -f '/Users/edsonma/Tools/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/edsonma/Tools/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Kubectl
-if [ $commands[kubectl] ]; then
-  source <(kubectl completion zsh)
-fi
+#if [ $commands[kubectl] ]; then
+#  source <(kubectl completion zsh)
+#fi
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-#export PATH="$PATH:$HOME/.rvm/bin"
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+export PATH="$PATH:$HOME/.rvm/bin"
 #eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 
 # To QT 5.5
@@ -136,6 +136,5 @@ fi
 #export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 #export PATH="/usr/local/opt/ncurses/bin:$PATH"
 #export PATH="/usr/local/sbin:$PATH"
-
 
 export M2_REPO=~/.m2/repository

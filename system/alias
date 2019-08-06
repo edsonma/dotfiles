@@ -27,3 +27,5 @@ alias ariel="cd /Users/edsonma/workspace/workspace-projects/little-mermaid/ariel
 alias sebastian="cd /Users/edsonma/workspace/workspace-projects/little-mermaid/sebastian; ls"
 alias mobee="cd /Users/edsonma/workspace/workspace-projects/mapeiadf; ls"
 alias txt="cd /Users/edsonma/txt; ls"
+alias m2m="cd /Users/edsonma/workspace/workspace-visent/docker/m2m; ls"
+alias tomcat="cd /Users/edsonma/developApps/apache-tomcat-8.5.42/bin; ls"
