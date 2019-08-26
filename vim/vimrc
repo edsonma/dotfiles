@@ -70,9 +70,6 @@ Plugin 'airblade/vim-gitgutter'
 " vim-indent-guides
 Plugin 'nathanaelkane/vim-indent-guides'
 
-" vim-table-mode
-Plugin 'dhruvasagar/vim-table-mode'
-
 " l9
 Plugin 'L9'
 
@@ -133,9 +130,6 @@ Plugin 'mxw/vim-jsx'
 
 " typescript-vim
 Plugin 'leafgarland/typescript-vim'
-
-" syntax check
-Plugin 'vim-syntastic/syntastic'
 
 " pep8 checking
 Plugin 'nvie/vim-flake8'
