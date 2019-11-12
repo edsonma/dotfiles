@@ -14,7 +14,10 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 
 " vim-bundler
-Plugin 'tpope/vim-bundler' 
+Plugin 'tpope/vim-bundler'
+
+" vim-livedown
+Plugin 'shime/vim-livedown'
 
 " unimpaired
 Plugin 'tpope/vim-unimpaired'
@@ -82,6 +85,8 @@ Plugin 'godlygeek/tabular'
 " identline
 Plugin 'yggdroot/indentline'
 
+" vim-slim
+Plugin 'slim-template/vim-slim.git'
 
 " vim-airline
 Plugin 'bling/vim-airline'
@@ -97,9 +102,6 @@ Plugin 'pangloss/vim-javascript'
 
 " vim-colorschemes
 Plugin 'flazz/vim-colorschemes'
-
-" vim-markdown
-Plugin 'plasticboy/vim-markdown'
 
 " vim-tmux-navigator
 Plugin 'christoomey/vim-tmux-navigator'
@@ -184,7 +186,6 @@ Plugin 'airblade/gitgutter'
 
 "table mode
 Plugin 'dhruvasagar/vim-table-mode'
-
 
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 au BufNewFile,BufRead *.py
