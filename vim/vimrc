@@ -187,6 +187,12 @@ Plugin 'airblade/gitgutter'
 "table mode
 Plugin 'dhruvasagar/vim-table-mode'
 
+"vim-rails
+Plugin 'tpope/vim-rails'
+
+"vim-ruby
+Plugin 'vim-ruby/vim-ruby'
+
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 au BufNewFile,BufRead *.py
     \ set tabstop=3 |
