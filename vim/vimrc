@@ -1,6 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-highlight BadWhitespace ctermbg=red guibg=red 
+highlight BadWhitespace ctermbg=red guibg=red
+autocmd BufNewFile,BufRead *.slim set ft=slim
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -8,7 +9,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+"Plugin 'VundleVim/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -44,7 +45,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 
 " plugin nerdcommenter
-Plugin 'scrooloose/nerdcomenter'
+Plugin 'scrooloose/nerdcommenter'
 
 " plugin syntastic
 Plugin 'scrooloose/syntastic'
@@ -86,7 +87,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'yggdroot/indentline'
 
 " vim-slim
-Plugin 'slim-template/vim-slim.git'
+Plugin 'slim-template/vim-slim'
 
 " vim-airline
 Plugin 'bling/vim-airline'
@@ -154,9 +155,6 @@ Plugin 'garbas/vim-snipmate'
 " NrrwRgn
 Plugin 'chrisbra/NrrwRgn'
 
-" IdentGuides
-Plugin 'nathanaelkane/vim-ident-guides'
-
 " mw-utils
 Plugin 'MarcWeber/vim-addon-mw-utils'
 
@@ -164,13 +162,10 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 
 " snippets
-Plugin 'honz/vim-snippets'
+Plugin 'honza/vim-snippets'
 
 " follow-my-lead
-Plugin 'ktonga/follow-my-lead'
-
-" Mark-karkati
-Plugin  'vim-scripts/Mark-Karkat'
+Plugin 'ktonga/vim-follow-my-lead'
 
 " Windowswap
 Plugin 'wesQ3/vim-windowswap'
@@ -180,9 +175,6 @@ Plugin 'itchyny/calendar.vim'
 
 " Vim Highlighter
 Plugin 'vim-scripts/Txtfmt-The-Vim-Highlighter'
-
-"gitgutter
-Plugin 'airblade/gitgutter'
 
 "table mode
 Plugin 'dhruvasagar/vim-table-mode'
