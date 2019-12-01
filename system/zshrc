@@ -101,7 +101,7 @@ source ~/.alias
 export PATH="$HOME/.jenv/bin:$PATH"
 #eval "$(jenv init -)"
 
-# asdf 
+# asdf
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
