@@ -105,7 +105,6 @@ export PATH="$HOME/.jenv/bin:$PATH"
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
-
 #export PATH="/usr/local/opt/freetds@0.91/bin:$PATH"
 #export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home"
 
@@ -135,8 +134,7 @@ export PATH="$HOME/.jenv/bin:$PATH"
 #export PATH="/usr/local/opt/ncurses/bin:$PATH"
 #export PATH="/usr/local/sbin:$PATH"
 
-export M2_REPO=~/.m2/repository
-
+#export M2_REPO=~/.m2/repository
 
 # RVM - Load RVM into a shell session *as a function*
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
@@ -148,3 +146,8 @@ export M2_REPO=~/.m2/repository
 # libffi
 export LDFLAGS="-L/usr/local/opt/libffi/lib"
 export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+
+export PATH="/usr/local/opt/unzip/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+
