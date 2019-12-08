@@ -102,8 +102,8 @@ export PATH="$HOME/.jenv/bin:$PATH"
 #eval "$(jenv init -)"
 
 # asdf
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+#. $HOME/.asdf/asdf.sh
+#. $HOME/.asdf/completions/asdf.bash
 
 #export PATH="/usr/local/opt/freetds@0.91/bin:$PATH"
 #export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home"
@@ -137,11 +137,11 @@ export PATH="$HOME/.jenv/bin:$PATH"
 #export M2_REPO=~/.m2/repository
 
 # RVM - Load RVM into a shell session *as a function*
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
-#export PATH="/usr/local/sbin:$PATH"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+export PATH="/usr/local/sbin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-#export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/.rvm/bin"
 
 # libffi
 export LDFLAGS="-L/usr/local/opt/libffi/lib"
@@ -151,3 +151,7 @@ export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH="/usr/local/opt/unzip/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
+# Load rbenv automatically by appending
+# the following to ~/.zshrc:
+#export PATH="$HOME/.rbenv/shims:$PATH"
+#eval "$(rbenv init -)"
