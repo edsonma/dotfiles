@@ -34,3 +34,5 @@ alias ra="cd /Users/edsonma/workspace/training/rails/reclame_ai"
 alias devsquad="cd /Users/edsonma/workspace/workspace-projects/devsquad; ls"
 alias esteira="cd /Users/edsonma/workspace/workspace-bxblue/projects/esteira; ls"
 alias bx="cd /Users/edsonma/workspace/workspace-bxblue; ls"
+alias drails='doppler run -- rails s'
+alias crails='doppler run -- rails c'
