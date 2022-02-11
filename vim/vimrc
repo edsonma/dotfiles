@@ -14,6 +14,9 @@ call vundle#begin()
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 
+" fuzzy search'
+Plugin 'junegunn/fzf.vim'
+
 " vim-bundler
 Plugin 'tpope/vim-bundler'
 
@@ -34,9 +37,6 @@ Plugin 'tpope/vim-sensible'
 
 " plugin vim-obsession
 Plugin 'tpope/vim-obsession'
-
-" plugin vim-fugitive
-Plugin 'tpope/vim-fugitive'
 
 " surround.vim
 Plugin 'tpope/vim-surround'
@@ -157,9 +157,6 @@ Plugin 'chrisbra/NrrwRgn'
 
 " mw-utils
 Plugin 'MarcWeber/vim-addon-mw-utils'
-
-" tlib
-Plugin 'tomtom/tlib_vim'
 
 " snippets
 Plugin 'honza/vim-snippets'
