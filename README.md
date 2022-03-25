@@ -14,7 +14,7 @@ There's some simple statements for different operating systems: OS X and Linux. 
 ## Quickstart
 If you want to install full tools, you can run:
 ```bash
-git clone git://github.com/edosnma/dotfiles ~/dotfiles
+git clone git://github.com/edsonma/dotfiles ~/dotfiles
 cd ~/dotfiles
 ./dotfiles_install.sh
 ```
@@ -29,7 +29,7 @@ If you want only create symbolic links (for some reason you already installed ev
 - Installs zshell according to you plataform
 - Installs Vundle for you vim
 - Installs ASDF
-- Drinks (Installs) Homebrew or Linuxbrew into your system
+- Installs Homebrew or Linuxbrew into your system (Grab a cup of coofee!)
 
 ## references
 https://dotfiles.github.io/
