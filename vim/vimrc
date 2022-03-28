@@ -14,7 +14,7 @@ set nocompatible
 " turns off filetype
 filetype off
 
-"=============> Vundle Setup
+"=============> Vundle Setup 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 
@@ -62,7 +62,7 @@ call vundle#begin()
   Plugin 'reedes/vim-colors-pencil'
   " dimmin inactive window
   Plugin 'blueyed/vim-diminactive'
-  " reopens last place
+  " reopens last place 
   Plugin 'vim-lastplace'
   " vim l9
   Plugin 'L9'
@@ -106,7 +106,7 @@ call vundle#end()
 "=============> General Settings
 " history lines
 set history=500
-" turns on detection plugin indent
+" turns on detection plugin indent 
 filetype plugin indent on
 " autoread on outside changes
 set autoread
@@ -147,7 +147,7 @@ set tm=500
 
 "=============> Colors, Themes, Fonts
 " enables syntax highlights
-syntax on
+syntax on 
 " set my colorscheme
 colorscheme nord
 
@@ -180,11 +180,11 @@ let NERDTreeShowHidden = 1
 " Hide line numbers
 let NERDTreeShowLineNumbers = 0
 " Use the minimal menu (m)
-let NERDTreeMinimalMenu = 1
+let NERDTreeMinimalMenu = 1  
 " Panel opens on the left side
 let NERDTreeWinPos = 'left'
 " Set panel width to 31 columns
-let NERDTreeWinSize = 31
+let NERDTreeWinSize = 31 
 
 "=============> Shortcuts
 " autorpairs shortcut
@@ -192,5 +192,6 @@ let g:AutoPairsShortcutToggle = '<C-P>'
 " nerdtree shortcut
 nmap <F2> :NERDTreeToggle<CR>
 " tagbar toggle
-nmap <F8> :TagbarToggle<CR
->
+nmap <F8> :TagbarToggle<CR>
+" fzf search mapping
+nmap <C-P> :FZF<CR>
