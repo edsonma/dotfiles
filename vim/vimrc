@@ -14,8 +14,8 @@ set nocompatible
 " turns off filetype
 filetype off
 
-"=============> Vundle Setup 
-" set the runtime path to include Vundle and initialize
+"=============> Vundle Setup
+"set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 
 "=============> Vundle Plugins Start Block
@@ -43,6 +43,7 @@ call vundle#begin()
   " vim-gitgutter
   Plugin 'airblade/vim-gitgutter'
   " fuzzy search
+  Plugin 'junegunn/fzf'
   Plugin 'junegunn/fzf.vim'
   " plugin nerdtree
   Plugin 'scrooloose/nerdtree'
@@ -62,7 +63,7 @@ call vundle#begin()
   Plugin 'reedes/vim-colors-pencil'
   " dimmin inactive window
   Plugin 'blueyed/vim-diminactive'
-  " reopens last place 
+  " reopens last place
   Plugin 'vim-lastplace'
   " vim l9
   Plugin 'L9'
