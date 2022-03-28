@@ -58,11 +58,11 @@ else
     # If the platform is Linux, try an apt-get to install zsh and then recurse
     if [[ $platform == 'Linux' ]]; then
         if [[ -f /etc/redhat-release ]]; then
-            sudo yum install zsh
+            sudo yum install -y zsh
             install_zsh
         fi
         if [[ -f /etc/debian_version ]]; then
-            sudo apt-get install zsh
+            sudo apt-get install -y zsh
             install_zsh
         fi
     # If the platform is OS X, tell the user to install zsh :)
@@ -89,10 +89,10 @@ install_asdf() {
   else
     if [[ $platform == 'Linux' ]]; then
         if [[ -f /etc/redhat-release ]]; then
-          sudo yum install automake autoconf readline-devel ncurses-devel openssl-devel libyaml-devel libxslt-devel libffi-devel libtool unixODBC-devel
+          sudo yum install -y automake autoconf readline-devel ncurses-devel openssl-devel libyaml-devel libxslt-devel libffi-devel libtool unixODBC-devel
         fi
         if [[ -f /etc/debian_version ]]; then
-      sudo apt-get install automake autoconf libreadline-dev libncurses-dev libssl-dev libyaml-dev libxslt-dev libffi-dev libtool unixodbc-dev
+      sudo apt-get install -y automake autoconf libreadline-dev libncurses-dev libssl-dev libyaml-dev libxslt-dev libffi-dev libtool unixodbc-dev
         fi
     elif [[ $platform == 'Darwin' ]]; then
       brew install coreutils automake autoconf openssl libyaml readline libxslt libtool unixodbc
@@ -127,9 +127,23 @@ install_brew() {
     fi
 }
 
+install_fzf() {
+    if [[ $platform == 'Linux' ]]; then
+      if [[ -f /etc/redhat-release ]]; then
+        sudo yum install -y fzf
+      fi
+      if [[ -f /etc/debian_version ]]; then
+    sudo apt-get install -y fzf
+      fi
+    elif [[ $platform == 'Darwin' ]]; then
+      brew install fzf
+    fi
+}
+
 install_zsh
 install_vundle
 install_asdf
 install_brew
+install fzf
 
 create_symbolic_links
