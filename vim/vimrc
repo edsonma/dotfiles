@@ -30,6 +30,8 @@ call vundle#begin()
   Plugin 'henrik/vim-ruby-runner'
   "vim-rails
   Plugin 'tpope/vim-rails'
+  "vim-rubocop"
+  Plugin 'ngmy/vim-rubocop'
   " vim-endwise
   Plugin 'tpope/vim-endwise'
   " vim-bundler
@@ -107,7 +109,7 @@ call vundle#end()
 "=============> General Settings
 " history lines
 set history=500
-" turns on detection plugin indent 
+" turns on detection plugin indent
 filetype plugin indent on
 " autoread on outside changes
 set autoread
@@ -140,6 +142,8 @@ set whichwrap+=<,>,h,l
 set smartcase
 " acts as incremental search
 set incsearch
+" enables mouse usage
+set mouse=a
 " disable annoying sounds
 set noerrorbells
 set novisualbell
@@ -148,7 +152,7 @@ set tm=500
 
 "=============> Colors, Themes, Fonts
 " enables syntax highlights
-syntax on 
+syntax on
 " set my colorscheme
 colorscheme nord
 
@@ -181,11 +185,11 @@ let NERDTreeShowHidden = 1
 " Hide line numbers
 let NERDTreeShowLineNumbers = 0
 " Use the minimal menu (m)
-let NERDTreeMinimalMenu = 1  
+let NERDTreeMinimalMenu = 1
 " Panel opens on the left side
 let NERDTreeWinPos = 'left'
 " Set panel width to 31 columns
-let NERDTreeWinSize = 31 
+let NERDTreeWinSize = 31
 
 "=============> Shortcuts
 " autorpairs shortcut
@@ -196,3 +200,6 @@ nmap <F2> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 " fzf search mapping
 nmap <C-P> :FZF<CR>
+" rubocop linter key
+let g:vimrubocop_keymap = 0
+nmap <Leader>r :RuboCop<CR>
