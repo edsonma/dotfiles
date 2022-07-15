@@ -154,4 +154,11 @@ export PATH="/usr/local/sbin:$PATH"
 # Load rbenv automatically by appending
 # the following to ~/.zshrc:
 #export PATH="$HOME/.rbenv/shims:$PATH"
-#eval "$(rbenv init -)"
+#eval "$(rbenv init -)
+#
+
+# FZF and RIPGREP
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_OPTS='-m --height 50% --border'
+fi"
