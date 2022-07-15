@@ -99,8 +99,8 @@ call vundle#begin()
   Plugin 'itchyny/calendar.vim'
   "table mode
   Plugin 'dhruvasagar/vim-table-mode'
-  " vim one theme
-  Plugin 'rakr/vim-one'
+  " oceanic-next theme
+  Plugin 'mhartington/oceanic-next'
   " -------------- To try it later
   " ctrlp.vim
   " Plugin 'kien/ctrlp.vim'
@@ -174,9 +174,7 @@ if (empty($TMUX))
   endif
 endif
 
-let g:airline_theme='one'
-
-colorscheme one
+colorscheme OceanicNext
 set background=dark
 
 "=============> Text, Tabs, Identations
