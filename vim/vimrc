@@ -116,6 +116,8 @@ set autoread
 au FocusGained,BufEnter * checktime
 " sudo saving using uppercase :W
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+" when last buffer allows quit
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "=============> Vim UI
 " 5 lines for the cursor
@@ -147,6 +149,8 @@ set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
+" max text length
+au BufRead,BufNewFile *.rb setlocal textwidth=120
 
 "=============> Colors, Themes, Fonts
 " enables syntax highlights
@@ -207,19 +211,8 @@ let NERDTreeMinimalMenu = 1
 let NERDTreeWinPos = 'left'
 " Set panel width to 31 columns
 let NERDTreeWinSize = 31
-
-" nerdtree toogle using :n
-nmap - :NERDTreeToggle<cr>
-" jumps to the nerdtree window from any other window
-map <leader>r :NERDTreeFind<cr>
-" jump to nerdtree and highligh file location
-map ] :NERDTreeFind<CR>
-" when last buffer allows quit
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" fzf
-" remap envoke key
-nnoremap <silent> <C-z> :FZF<CR>
+" Spell Check
+set spell spelllang=en_us
 
 "=============> Shortcuts
 " autorpairs shortcut
@@ -229,3 +222,25 @@ let g:AutoPairsShortcutToggle = '<C-P>'
 " rubocop linter key
 "let g:vimrubocop_keymap = 0
 "nmap <Leader>r :RuboCop<CR>
+"
+"============> Remaps
+" remap splitting windows
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" remap splits
+nmap :vs :vsplit
+nmap :s :split
+
+" fzf envoke key
+nnoremap <silent> <C-z> :FZF<CR>
+
+" nerdtree toogle using :n
+nmap - :NERDTreeToggle<cr>
+" jumps to the nerdtree window from any other window
+map <leader>r :NERDTreeFind<cr>
+" jump to nerdtree and highligh file location
+map ] :NERDTreeFind<CR>
+
