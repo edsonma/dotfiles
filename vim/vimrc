@@ -101,10 +101,8 @@ call vundle#begin()
   Plugin 'dhruvasagar/vim-table-mode'
   " oceanic-next theme
   Plugin 'mhartington/oceanic-next'
-  " -------------- To try it later
-  " ctrlp.vim
-  " Plugin 'kien/ctrlp.vim'
-
+  " autocomplete
+  Plugin 'Shougo/neocomplete.vim'
   "=============> Vundle Plugins End Block
 call vundle#end()
 
@@ -118,8 +116,6 @@ set autoread
 au FocusGained,BufEnter * checktime
 " sudo saving using uppercase :W
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
-" nerdtree toogle using :n
-nmap <leader>n :NERDTreeToggle<cr>
 
 "=============> Vim UI
 " 5 lines for the cursor
@@ -163,7 +159,7 @@ syntax on
 "(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
 if (empty($TMUX))
   if (has("nvim"))
-    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    "Fod Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   endif
   "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
@@ -212,15 +208,23 @@ let NERDTreeWinPos = 'left'
 " Set panel width to 31 columns
 let NERDTreeWinSize = 31
 
+" nerdtree toogle using :n
+nmap - :NERDTreeToggle<cr>
+" jumps to the nerdtree window from any other window
+map <leader>r :NERDTreeFind<cr>
+autocmd BufWinEnter * NERDTreeFind
+"jump to nerdree and highligh file location
+map ] :NERDTreeFind<CR>
+
+" fzf
+" remap envoke key
+nnoremap <silent> <C-z> :FZF<CR>
+
 "=============> Shortcuts
 " autorpairs shortcut
 let g:AutoPairsShortcutToggle = '<C-P>'
-" nerdtree shortcut
-nmap <F2> :NERDTreeToggle<CR>
 " tagbar toggle
-nmap <F8> :TagbarToggle<CR>
-" fzf search mapping
-nmap <C-P> :FZF<CR>
+" nmap <F8> :TagbarToggle<CR>
 " rubocop linter key
-let g:vimrubocop_keymap = 0
-nmap <Leader>r :RuboCop<CR>
+"let g:vimrubocop_keymap = 0
+"nmap <Leader>r :RuboCop<CR>
