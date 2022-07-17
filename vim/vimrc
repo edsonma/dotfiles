@@ -212,9 +212,10 @@ let NERDTreeWinSize = 31
 nmap - :NERDTreeToggle<cr>
 " jumps to the nerdtree window from any other window
 map <leader>r :NERDTreeFind<cr>
-autocmd BufWinEnter * NERDTreeFind
-"jump to nerdree and highligh file location
+" jump to nerdtree and highligh file location
 map ] :NERDTreeFind<CR>
+" when last buffer allows quit
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " fzf
 " remap envoke key
