@@ -55,7 +55,7 @@ call vundle#begin()
   Plugin 'tpope/vim-sensible'
   " plugin vim-obsession
   Plugin 'tpope/vim-obsession'
-  " plugin nerdcommenter
+  " plugin vim commentary
   Plugin 'scrooloose/nerdcommenter'
   " plugin syntastic
   Plugin 'scrooloose/syntastic'
@@ -176,6 +176,8 @@ endif
 
 colorscheme OceanicNext
 set background=dark
+let g:oceanic_next_terminal_italic = 1
+let g:oceanic_next_terminal_bold = 1
 
 "=============> Text, Tabs, Identations
 " use spaces instead of tabs
@@ -211,10 +213,14 @@ let NERDTreeMinimalMenu = 1
 let NERDTreeWinPos = 'left'
 " Set panel width to 31 columns
 let NERDTreeWinSize = 31
+" Add spaces after comment delimiters
+let g:NERDSpaceDelims = 1
+" Custom delimiters
+let g:NERDCustomDelimiters = { 'c': {'left': '#'} }
 " Spell Check
 set spell spelllang=en_us
 
-"=============> Shortcuts
+""=============> Shortcuts
 " autorpairs shortcut
 let g:AutoPairsShortcutToggle = '<C-P>'
 " tagbar toggle

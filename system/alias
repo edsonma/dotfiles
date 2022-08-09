@@ -14,5 +14,5 @@ alias drails='doppler run -- rails s'
 alias crails='doppler run -- rails c'
 alias dsidekiq='doppler run -- bundle exec sidekiq'
 alias rd="cd /Users/edsonma/workspace/workspace-rdstation; ls"
-alias rdstation="cd /Users/edsonma/workspace/workspace-rdstation/projects/rdstationi; ls"
+alias rdstation="cd /Users/edsonma/workspace/workspace-rdstation/projects/rdstation; ls"
 alias clustering="cd /Users/edsonma/workspace/workspace-rdstation/projects/clustering-engine; ls"
