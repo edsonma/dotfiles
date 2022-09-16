@@ -16,3 +16,7 @@ alias dsidekiq='doppler run -- bundle exec sidekiq'
 alias rd="cd /Users/edsonma/workspace/workspace-rdstation; ls"
 alias rdstation="cd /Users/edsonma/workspace/workspace-rdstation/projects/rdstation; ls"
 alias clustering="cd /Users/edsonma/workspace/workspace-rdstation/projects/clustering-engine; ls"
+alias cpu="sudo powermetrics --samplers smc |grep -i \"CPU die temperature\""
+alias gpu="sudo powermetrics --samplers smc |grep -i \"GPU die temperature\""
+alias metrics="sudo powermetrics | sed -n '/\*\*\*\* SMC sensors \*\*\*\*/,/Number of prochots/p'"
+alias system="system_profiler SPSoftwareDataType"
