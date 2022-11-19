@@ -144,6 +144,6 @@ install_zsh
 install_vundle
 install_asdf
 install_brew
-install fzf
+install_fzf
 
 create_symbolic_links
