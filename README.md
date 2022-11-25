@@ -1,4 +1,5 @@
-* Guppy Lovers    ___          
+```
+* Guppy Lovers: Fish Shell ___          
   ___======____=---=)
 /T            \_--===)
 [ \ (O)   \~    \_-==)
@@ -13,7 +14,8 @@
                       /J\JT\JJJJ)
                       (JJJ| \UUU)
                        (UU)
-                       
+```                    
+
 ## Table of content
 - [My Personal Dotfiles](#my-personal-dotfiles)
 - [Quickstart](#quickstart)
