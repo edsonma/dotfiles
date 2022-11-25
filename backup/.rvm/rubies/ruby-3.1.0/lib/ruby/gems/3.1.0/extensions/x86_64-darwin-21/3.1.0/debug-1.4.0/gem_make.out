@@ -1,0 +1,16 @@
+current directory: /Users/edsonma/.rvm/rubies/ruby-3.1.0/lib/ruby/gems/3.1.0/gems/debug-1.4.0/ext/debug
+/Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/ruby --disable\=gems -I/Users/edsonma/.rvm/rubies/ruby-3.1.0/lib/ruby/3.1.0/x86_64-darwin21 -I /Users/edsonma/.rvm/src/ruby-3.1.0/lib -r ./siteconf20220208-8022-cx84vi.rb extconf.rb
+creating Makefile
+
+current directory: /Users/edsonma/.rvm/rubies/ruby-3.1.0/lib/ruby/gems/3.1.0/gems/debug-1.4.0/ext/debug
+make DESTDIR\= clean
+
+current directory: /Users/edsonma/.rvm/rubies/ruby-3.1.0/lib/ruby/gems/3.1.0/gems/debug-1.4.0/ext/debug
+make DESTDIR\=
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.bundle
+
+current directory: /Users/edsonma/.rvm/rubies/ruby-3.1.0/lib/ruby/gems/3.1.0/gems/debug-1.4.0/ext/debug
+make DESTDIR\= install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 debug.bundle ./.gem.20220208-8022-xzl0cv/debug

@@ -1,0 +1,26 @@
++__rvm_set_executable:2> __file=/Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/bundle
++__rvm_set_executable:3> [[ -x /Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/bundle ]]
++__rvm_set_executable:2> __file=/Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/bundler
++__rvm_set_executable:3> [[ -x /Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/bundler ]]
++__rvm_set_executable:2> __file=/Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/erb
++__rvm_set_executable:3> [[ -x /Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/erb ]]
++__rvm_set_executable:2> __file=/Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/gem
++__rvm_set_executable:3> [[ -x /Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/gem ]]
++__rvm_set_executable:2> __file=/Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/irb
++__rvm_set_executable:3> [[ -x /Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/irb ]]
++__rvm_set_executable:2> __file=/Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/racc
++__rvm_set_executable:3> [[ -x /Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/racc ]]
++__rvm_set_executable:2> __file=/Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/rake
++__rvm_set_executable:3> [[ -x /Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/rake ]]
++__rvm_set_executable:2> __file=/Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/rbs
++__rvm_set_executable:3> [[ -x /Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/rbs ]]
++__rvm_set_executable:2> __file=/Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/rdbg
++__rvm_set_executable:3> [[ -x /Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/rdbg ]]
++__rvm_set_executable:2> __file=/Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/rdoc
++__rvm_set_executable:3> [[ -x /Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/rdoc ]]
++__rvm_set_executable:2> __file=/Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/ri
++__rvm_set_executable:3> [[ -x /Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/ri ]]
++__rvm_set_executable:2> __file=/Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/ruby
++__rvm_set_executable:3> [[ -x /Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/ruby ]]
++__rvm_set_executable:2> __file=/Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/typeprof
++__rvm_set_executable:3> [[ -x /Users/edsonma/.rvm/rubies/ruby-3.1.0/bin/typeprof ]]

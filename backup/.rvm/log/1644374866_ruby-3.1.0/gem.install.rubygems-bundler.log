@@ -1,0 +1,7 @@
+Building native extensions. This could take a while...
+# In case of problems run the following command to update binstubs:
+    gem regenerate_binstubs
+Successfully installed executable-hooks-1.6.1
+Successfully installed bundler-unload-1.0.2
+Successfully installed rubygems-bundler-1.4.5
+3 gems installed
