@@ -80,7 +80,9 @@ fi
 
 After Words
 
-This dotfiles setup as primary based on [Michael Smalley's dotfiles setup](https://github.com/michaeljsmalley/dotfiles), which he described at his [blog](http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/). but I also get contributions from https://github.com/soto97/dotfiles
+~~This dotfiles setup as primary based on [Michael Smalley's dotfiles setup](https://github.com/michaeljsmalley/dotfiles), which he described at his [blog](http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/). but I also get contributions from https://github.com/soto97/dotfiles~~
+
+Thank you for @michaeljsmalley @soto97 dotfiles contributions for my old env, but...
 
 Now I am migrating to new Fishy shell envs and diving in new waters. It is a living experiment and hope find clean waters in this new jorney. Cheers! gulp gulp .. o o  oOo O ...
 
