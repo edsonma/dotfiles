@@ -75,6 +75,7 @@ fi
 - Starship
 - Brew (Repo Bier for good)
 - Alacritty
+- Tmux
 
 
 After Words
