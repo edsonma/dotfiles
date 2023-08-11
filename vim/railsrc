@@ -1,0 +1,252 @@
+"  __^__                                                                  __^__
+" ( ___ )----------------------------------------------------------------( ___ )
+"  | / |                                                                  | \ |
+"  | / |         My personal vimrc setup - for Ruby on Rails              | \ |
+"  | / |          Maintained by Edson Ma <edsonma@gmail.com>              | \ |
+"  | / | Versioned at https://github.com/edsonma/dotfiles/tree/master/vim | \ |
+"  | / |                     license GPL v3                               | \ |
+"  |___|                                                                  |___|
+" (_____)----------------------------------------------------------------(_____)
+
+"=============> Main Settings
+" disable vi compatibility
+set nocompatible
+" turns off filetype
+filetype off
+
+"=============> Vundle Setup
+"set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+
+"=============> Vundle Plugins Start Block
+call vundle#begin()
+  " let Vundle manage Vundle
+  Plugin 'VundleVim/Vundle.vim'
+  " polyglot
+  Plugin 'sheerun/vim-polyglot'
+  "vim-ruby
+  Plugin 'vim-ruby/vim-ruby'
+  " vim-ruby-runner
+  Plugin 'henrik/vim-ruby-runner'
+  "vim-rails
+  Plugin 'tpope/vim-rails'
+  "vim-rubocop"
+  Plugin 'ngmy/vim-rubocop'
+  " vim-endwise
+  Plugin 'tpope/vim-endwise'
+  " vim-bundler
+  Plugin 'tpope/vim-bundler'
+  " vim-slim
+  Plugin 'slim-template/vim-slim'
+  " pair completion
+  Plugin 'jiangmiao/auto-pairs'
+  " identline
+  Plugin 'yggdroot/indentline'
+  " vim-gitgutter
+  Plugin 'airblade/vim-gitgutter'
+  " fuzzy search
+  Plugin 'junegunn/fzf'
+  Plugin 'junegunn/fzf.vim'
+  " plugin nerdtree
+  Plugin 'scrooloose/nerdtree'
+  " speed-dating
+  Plugin 'tpope/vim-speeddating'
+  " plugin vim-sensitive
+  Plugin 'tpope/vim-sensible'
+  " plugin vim-obsession
+  Plugin 'tpope/vim-obsession'
+  " plugin vim commentary
+  Plugin 'scrooloose/nerdcommenter'
+  " plugin syntastic
+  Plugin 'scrooloose/syntastic'
+  " lightline.vim
+  Plugin 'itchyny/lightline.vim'
+  " vim-colors-pencil
+  Plugin 'reedes/vim-colors-pencil'
+  " dimmin inactive window
+  Plugin 'blueyed/vim-diminactive'
+  " reopens last place
+  Plugin 'vim-lastplace'
+  " vim l9
+  Plugin 'L9'
+  " tabular
+  Plugin 'godlygeek/tabular'
+  " tagbar
+  Plugin 'majutsushi/tagbar'
+  " vim-colorschemes
+  Plugin 'flazz/vim-colorschemes'
+  " vim-json
+  Plugin 'elzr/vim-json'
+  " docker-file vm
+  Plugin 'ekalinin/dockerfile.vim'
+  " Drawit!
+  Plugin 'DrawIt'
+  " better-whitespace
+  Plugin 'ntpeters/vim-better-whitespace'
+  " typescript-vim
+  Plugin 'leafgarland/typescript-vim'
+  "Tidal Cycles
+  Plugin 'munshkr/vim-tidal'
+  "GnuPG
+  Plugin 'jamessan/vim-gnupg'
+  " NrrwRgn
+  Plugin 'chrisbra/NrrwRgn'
+  " snippets
+  Plugin 'honza/vim-snippets'
+  " Windowswap
+  Plugin 'wesQ3/vim-windowswap'
+  " Calendar
+  Plugin 'itchyny/calendar.vim'
+  "table mode
+  Plugin 'dhruvasagar/vim-table-mode'
+  " oceanic-next theme
+  Plugin 'mhartington/oceanic-next'
+  " autocomplete
+  Plugin 'Shougo/neocomplete.vim'
+  "=============> Vundle Plugins End Block
+call vundle#end()
+
+"=============> General Settings
+" history lines
+set history=500
+" turns on detection plugin indent
+filetype plugin indent on
+" autoread on outside changes
+set autoread
+au FocusGained,BufEnter * checktime
+" sudo saving using uppercase :W
+command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+" when last buffer allows quit
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+"=============> Vim UI
+" 5 lines for the cursor
+set so=5
+" turns on wild menu
+set wildmenu
+" enables line numbers
+set nu
+" use relative number scheme
+set relativenumber
+" highlights search results
+set hlsearch
+" highlights setup
+highlight BadWhitespace ctermbg=red guibg=red
+autocmd BufNewFile,BufRead *.slim set ft=slim
+" ignore case when searching
+set ignorecase
+" fixing backspace in insert mode
+set backspace=indent,eol,start
+set whichwrap+=<,>,h,l
+" try to be smart on search
+set smartcase
+" acts as incremental search
+set incsearch
+" enables mouse usage
+set mouse=a
+" disable annoying sounds
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+" max text length
+au BufRead,BufNewFile *.rb setlocal textwidth=120
+
+"=============> Colors, Themes, Fonts
+" enables syntax highlights
+syntax on
+" set my colorscheme
+"
+"Credit joshdick
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
+"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+if (empty($TMUX))
+  if (has("nvim"))
+    "Fod Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
+colorscheme OceanicNext
+set background=dark
+let g:oceanic_next_terminal_italic = 1
+let g:oceanic_next_terminal_bold = 1
+
+"=============> Text, Tabs, Identations
+" use spaces instead of tabs
+set expandtab
+" be smart on tabs
+set smarttab
+" one tab two spaces
+set shiftwidth=2
+set softtabstop=2
+" auto ident
+set autoindent
+" smart ident
+set smartindent
+" wrap lines
+set wrap
+
+"=============> Files, Backups, Directories
+" directory settings
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swp//
+
+"=============> Plugins Configurations
+" nerdtree
+" Show the bookmarks table
+let NERDTreeShowBookmarks = 1
+" Show hidden files
+let NERDTreeShowHidden = 1
+" Hide line numbers
+let NERDTreeShowLineNumbers = 0
+" Use the minimal menu (m)
+let NERDTreeMinimalMenu = 1
+" Panel opens on the left side
+let NERDTreeWinPos = 'left'
+" Set panel width to 31 columns
+let NERDTreeWinSize = 31
+" Add spaces after comment delimiters
+let g:NERDSpaceDelims = 1
+" Custom delimiters
+let g:NERDCustomDelimiters = { 'c': {'left': '#'} }
+" Spell Check
+set spell spelllang=en_us
+
+""=============> Shortcuts
+" autorpairs shortcut
+let g:AutoPairsShortcutToggle = '<C-P>'
+" tagbar toggle
+" nmap <F8> :TagbarToggle<CR>
+" rubocop linter key
+"let g:vimrubocop_keymap = 0
+"nmap <Leader>r :RuboCop<CR>
+"
+"============> Remaps
+" remap splitting windows
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" remap splits
+nmap :vs :vsplit
+nmap :s :split
+
+" fzf envoke key
+nnoremap <silent> <C-z> :FZF<CR>
+
+" nerdtree toogle using :n
+nmap - :NERDTreeToggle<cr>
+" jumps to the nerdtree window from any other window
+map <leader>r :NERDTreeFind<cr>
+" jump to nerdtree and highligh file location
+map ] :NERDTreeFind<CR>
+

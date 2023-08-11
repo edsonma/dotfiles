@@ -8,3 +8,5 @@ alias gpu="sudo powermetrics --samplers smc |grep -i \"GPU die temperature\""
 alias metrics="sudo powermetrics | sed -n '/\*\*\*\* SMC sensors \*\*\*\*/,/Number of prochots/p'"
 alias system="system_profiler SPSoftwareDataType"
 alias fucking_ip="curl wtfismyip.com/json"
+alias rvim='vim -u railsrc'
+
