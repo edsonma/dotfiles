@@ -10,4 +10,8 @@ alias system="system_profiler SPSoftwareDataType"
 alias fucking_ip="curl wtfismyip.com/json"
 alias rvim='vim -u  ~/dotfiles/vim/railsrc'
 alias gvim='vim -u  ~/dotfiles/vim/vimrc'
-
+alias zs="zookeeper-server-start /usr/local/etc/zookeeper/zoo.cfg&"
+alias ks="kafka-server-start /usr/local/etc/kafka/server.properties&"
+alias ze="zookeeper-server-stop /usr/local/etc/zookeeper/zoo.cfg&"
+alias ke="kafka-server-stop /usr/local/etc/kafka/server.properties&"
+alias kraft="kafka-server-start /usr/local/etc/kafka/kraft/server.properties&"
