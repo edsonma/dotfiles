@@ -1,0 +1,11 @@
+package brew
+package config
+package fish_logo
+package grc
+package spark
+theme agnoster
+theme bobthefish
+theme clearance
+theme default
+theme sashimi
+theme sushi

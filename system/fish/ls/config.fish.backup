@@ -1,0 +1,5 @@
+# rbenv stuff
+status --is-interactive; and ~/.rbenv/bin/rbenv init - fish | source
+
+# startship
+starship init fish | source
