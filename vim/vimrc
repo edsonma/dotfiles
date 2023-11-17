@@ -99,8 +99,8 @@ call vundle#begin()
   Plugin 'itchyny/calendar.vim'
   "table mode
   Plugin 'dhruvasagar/vim-table-mode'
-  " oceanic-next theme
-  Plugin 'mhartington/oceanic-next'
+  "dracula theme
+  Plugin 'dracula/vim', { 'name': 'dracula' }  
   " autocomplete
   Plugin 'Shougo/neocomplete.vim'
   "=============> Vundle Plugins End Block
