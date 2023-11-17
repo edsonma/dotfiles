@@ -32,7 +32,7 @@ There's some simple statements for different operating systems: OS X and Linux. 
 update: my old env was using zshell + oh-my-zsh framework + iterm2 and now I am moving to fish_shell + starship + alacritty. Old install files will be stored at setup folder and renamed to dotfiles_zsh_install.sh and link_zsh_files.sh
 
 
-## Quickstart
+## Quickstart (WIP)
 If you want to install full tools, you can run:
 ```bash
 git clone git://github.com/edsonma/dotfiles ~/dotfiles
@@ -55,7 +55,7 @@ If you want only create symbolic links (for some reason you already installed ev
 ## references
 https://dotfiles.github.io/
 
-### Symbolic links do dotfiles
+### Symbolic links do dotfiles (WIP)
 ```bash
 ln -s ~/dotfiles/vim/vimrc ~/.vimrc
 ln -s ~/dotfiles/vim ~/.vim
