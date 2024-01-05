@@ -1,3 +1,4 @@
+alias s="docker compose config | yq '.services[]|key'"
 alias g="git"
 alias ga="git add"
 alias gall="git add --all"
