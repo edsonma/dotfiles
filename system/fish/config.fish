@@ -9,3 +9,4 @@ if [ -f '/Users/edsonma/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/e
 
 set -x JAVA_HOME (/usr/libexec/java_home  -v 20.0.1)
 
+fish_add_path /opt/homebrew/bin
