@@ -34,4 +34,5 @@ alias krafte="kafka-server-stop /usr/local/etc/kafka/kraft/server.properties&"
 alias work="cd ~/workspace; ls"
 alias origem="cd ~/workspace/workspace-origem/projects; ls"
 alias personal="cd ~/workspace/workspace-personal; ls"
-
+alias dclean="docker rm $(docker ps -aq) && docker rmi $(docker images -a -q) && docker volume rm $(docker volume ls -q)"
+alias gbranchclean="git branch --merged | grep -Ev "(^\*|master|main|dev)" | xargs git branch -d"
